@@ -9,6 +9,7 @@ const Navbar = () => {
         <div>
           <img alt="pokeapi-logo" src={logoImg} className="navbar-img" />
         </div>
+        <div>❤️</div>
       </nav>
     </>
   );
