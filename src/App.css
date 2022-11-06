@@ -22,6 +22,7 @@ nav {
 
 .searchbar {
   background-color: white;
+  margin-right: 20px;
 }
 
 .searchbar input {
@@ -29,11 +30,6 @@ nav {
   box-shadow: 0px 2px 2px (0, 0, 0, 0.25);
   border-radius: 3px;
   border: none;
-}
-
-.searchbar-btn {
-  display: inline-block;
-  margin-left: 20px;
 }
 
 .searchbar-btn button{
