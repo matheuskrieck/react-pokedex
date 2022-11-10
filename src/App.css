@@ -64,9 +64,8 @@ nav {
 .pokedex-grid {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(3, 1fr);
   padding: 10px 0;
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -239,11 +238,91 @@ nav {
   margin-top: 25px;
 }
 
-.pokedex-grid {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 10px 0;
-  max-width: 90%;
-  margin: 0 auto;
+
+@media screen and (min-width: 1331px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .normal, .fighting, .flying, .poison, .ground, .rock, .bug, .ghost, .steel, .fire, .water, .grass, .electric, .psychic, .ice, .dragon, .dark, .fairy {
+    font-size: 20px;
+    padding: 3px 15px;
+    margin-bottom: 15px;
+  }
+
+  .pokemon-image {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+  }
+
+  .card-top h3 {
+    font-size: 26px;
+  }
+
+  .pokemon-card, .pokemon-heart-btn {
+    font-size: 22px;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 866px) and (max-width: 1330px) {
+  .pokemon-image {
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+  }
+
+  .card-top h3 {
+    font-size: 26px;
+  }
+
+  .pokemon-card, .pokemon-heart-btn {
+    font-size: 22px;
+    margin: 5px;
+  }
+
+  .pokedex-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .normal, .fighting, .flying, .poison, .ground, .rock, .bug, .ghost, .steel, .fire, .water, .grass, .electric, .psychic, .ice, .dragon, .dark, .fairy {
+    font-size: 20px;
+    padding: 3px 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 865px) and (min-width: 581px) {
+  .pokedex-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .pokedex-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 579px) {
+  .pokemon-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+
+  .card-top h3 {
+    font-size: 22px;
+  }
+
+  .pokemon-card, .pokemon-heart-btn {
+    font-size: 16px;
+  }
+
+  .normal, .fighting, .flying, .poison, .ground, .rock, .bug, .ghost, .steel, .fire, .water, .grass, .electric, .psychic, .ice, .dragon, .dark, .fairy {
+    font-size: 16px;
+    padding: 3px 15px;
+    margin-bottom: 15px;
+  }
 }
