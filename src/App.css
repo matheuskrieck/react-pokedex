@@ -93,14 +93,13 @@ nav {
 }
 
 .pokemon-image {
-  width: 70px;
-  height: 70px;
-  margin-right: 10px;
   object-fit: contain;
 }
 
 .pokemon-image-container {
-  padding: 0px 5px;
+  padding: 0px 25px;
+  width: 120px;
+  display: flex;
 }
 
 .card-body {
@@ -111,20 +110,14 @@ nav {
   flex: 1;
 }
 
-.card-top {
+.card-top, .card-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .card-top h3 {
   text-transform: capitalize;
-}
-
-.card-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .pokemon-type {
@@ -249,14 +242,8 @@ nav {
     grid-template-columns: fit-content(20%) fit-content(20%) fit-content(20%);
   }
 
-  .pokemon-image {
-    width: 120px;
-    height: 120px;
-    margin-right: 10px;
-  }
-
   .card-top h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .pokemon-card, .pokemon-heart-btn {
@@ -265,11 +252,6 @@ nav {
 }
 
 @media screen and (min-width: 866px) and (max-width: 1330px) {
-  .pokemon-image {
-    width: 110px;
-    height: 110px;
-    margin-right: 10px;
-  }
 
   .card-top h3 {
     font-size: 22px;
@@ -298,12 +280,6 @@ nav {
 @media screen and (min-width: 300px) and (max-width: 719px) {
   .pokedex-grid {
     grid-template-columns: fit-content(20%);
-  }
-  
-  .pokemon-image {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
   }
 
   .card-top h3 {

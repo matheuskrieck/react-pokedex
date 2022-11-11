@@ -11,13 +11,16 @@ const Pokemon = (props) => {
 
   const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
 
+  const pokemonGifs = "https://projectpokemon.org/images/sprites-models/bw-animated/";
+
   return (
     <div className="pokemon-card">
       <div className="pokemon-image-container">
         <img
           className="pokemon-image"
           alt={pokemon.name}
-          src={pokemon.sprites.front_default}
+          src={(pokemon.id < 10) ? `${pokemonGifs}00${pokemon.id}.gif` : (pokemon.id < 100) ? `${pokemonGifs}0${pokemon.id}.gif` : (pokemon.id < 650) ? `${pokemonGifs}${pokemon.id}.gif` : pokemon.sprites.front_default}
+          // src={pokemon.sprites.front_default}
         />
       </div>
       <div className="card-body">
