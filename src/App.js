@@ -35,9 +35,10 @@ function App() {
   };
 
   const loadFavoritePokemons = () => {
-    const pokemons = JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
+    const pokemons =
+      JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
     setFavorites(pokemons);
-  }
+  };
 
   useEffect(() => {
     loadFavoritePokemons();
@@ -60,22 +61,22 @@ function App() {
   }
 
   const onSearchHandler = async (pokemon) => {
-    if(!pokemon) {
+    if (!pokemon) {
       return fetchPokemons();
     }
 
-    setLoading(true)
-    setNotFound(false)
-    const result = await searchPokemon(pokemon)
-    if(!result) {
-      setNotFound(true)
+    setLoading(true);
+    setNotFound(false);
+    const result = await searchPokemon(pokemon);
+    if (!result) {
+      setNotFound(true);
     } else {
-      setPokemons([result])
-      setPage(0)
-      setTotalPages(1)
+      setPokemons([result]);
+      setPage(0);
+      setTotalPages(1);
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
     <FavoriteProvider
@@ -85,21 +86,28 @@ function App() {
       }}
     >
       <div>
-        <Navbar />
-        <Searchbar onSearch={onSearchHandler} />
+        <div className="nav-container">
+          <Navbar />
+          <Searchbar onSearch={onSearchHandler} />
+        </div>
         {notFound ? (
-          <div className="not-found-text"><p>Not found! Try again...
-          </p>
-          <img width="150px" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0f2e8b07-4a84-4ea8-9170-797302474b7b/davazny-4770d748-9e73-413e-846b-b0e579a11180.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBmMmU4YjA3LTRhODQtNGVhOC05MTcwLTc5NzMwMjQ3NGI3YlwvZGF2YXpueS00NzcwZDc0OC05ZTczLTQxM2UtODQ2Yi1iMGU1NzlhMTExODAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5BMZ9ZlkslsuOLqxcMy0Z97FKJXgVpsEl9PSHGIjVSU" alt="Sad Togepi" />
+          <div className="not-found-text">
+            <p>Not found! Try again...</p>
+            <img
+              width="150px"
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0f2e8b07-4a84-4ea8-9170-797302474b7b/davazny-4770d748-9e73-413e-846b-b0e579a11180.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBmMmU4YjA3LTRhODQtNGVhOC05MTcwLTc5NzMwMjQ3NGI3YlwvZGF2YXpueS00NzcwZDc0OC05ZTczLTQxM2UtODQ2Yi1iMGU1NzlhMTExODAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5BMZ9ZlkslsuOLqxcMy0Z97FKJXgVpsEl9PSHGIjVSU"
+              alt="Sad Togepi"
+            />
           </div>
-        ) :
-        (<Pokedex
-          pokemons={pokemons}
-          loading={loading}
-          page={page}
-          setPage={setPage}
-          totalPages={totalPages}
-        />)}
+        ) : (
+          <Pokedex
+            pokemons={pokemons}
+            loading={loading}
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages}
+          />
+        )}
       </div>
     </FavoriteProvider>
   );
