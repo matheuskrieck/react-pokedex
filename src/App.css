@@ -93,7 +93,7 @@ nav {
 }
 
 .pokemon-image {
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .pokemon-image-container {
@@ -292,17 +292,20 @@ nav {
 
   .nav-container {
     justify-content: space-around;
+    font-size: 12px;
   }
 
   .navbar-img {
-    height: auto;
+    width: 80px;
   }
 
   .searchbar input {
     width: 150px;
+    margin-right: 3px;
   }
 
   .searchbar-btn {
     width: 50px;
+    margin-right: 15px;
   }
 }

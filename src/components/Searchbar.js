@@ -5,7 +5,7 @@ const Searchbar = (props) => {
   const { onSearch } = props;
 
   const onChangeHandler = (e) => {
-    setSearch(e.target.value);
+    setSearch(e.target.value.toLowerCase());
     if (e.target.value.length === 0) {
       onSearch(undefined);
     }
