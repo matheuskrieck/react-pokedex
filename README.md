@@ -1,5 +1,9 @@
 <h1>ReactJS Pokedex</h1>
 
-Still in progress, need to finish the searchbar functionality, and add some more CSS styling.
+<h4>Project I made to practice and study how to consume APIs, deploy my react-app to github-pages and ReactJS in general.</h4>
+<br>
 
-In this project I am practicing how to consume APIs, deploying my react-app to github-pages and ReactJS in general.
+I have some ideas for the future:
+- Search pokemons when the user press enter on the searchbar.
+- Light / Dark Theme.
+- Show detailed information on a modal menu, when a pokemon is clicked.
